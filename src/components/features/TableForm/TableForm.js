@@ -43,9 +43,9 @@ const TableForm = ({action, actionText, id, ...props}) => {
 
   // on status change set releted fields to new values
   const changeTableStatus = (e) => {
+    const newStatus = e.target.value.toLowerCase();
     setStatus(e.target.value);
-    const newStatus = status.toLowerCase();
-
+    console.log(newStatus.toLowerCase());
     if(newStatus === 'busy'){
       setBill(0);
     }
