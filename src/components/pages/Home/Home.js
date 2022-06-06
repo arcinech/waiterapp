@@ -9,7 +9,7 @@ const Home = () => {
   const dispatch = useDispatch();
   // const [loading, isLoading] = useState(true);
   const loading = useSelector(loadingStatus);
-  
+
   useEffect(() => {
     dispatch(setLoadingStatus(true));
     dispatch(fetchTables({setLoadingStatus}));
@@ -18,7 +18,13 @@ const Home = () => {
 
   return (
     <div>
-      {loading && <Spinner animation="border" variant="primary"/>}
+      {loading && <div className="d-flex my-2">
+        <Spinner 
+          animation="border" 
+          variant="primary"
+          className="mx-auto"
+          />
+      </div>}
       {!loading && <TablesList />}
     </div>
   );
