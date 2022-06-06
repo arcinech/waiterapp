@@ -1,0 +1,28 @@
+.numberInput {
+  width: 45px!important;
+}
+
+.optionsSelect {
+  width: 240px!important;
+}
+
+.labelWidth {
+  width: 70px;
+}
+
+.billInput {
+  width: min-content!important;
+}
+.billInput, .numberInput {
+  /* Chrome, Safari, Edge, Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  &[type=number] {
+    -moz-appearance: textfield;
+  }
+}
