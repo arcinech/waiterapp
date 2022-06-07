@@ -76,7 +76,7 @@ const TableForm = ({action, actionText, id, ...props}) => {
               People: 
             </Form.Label>
             <Form.Control 
-              {...register("people", { required: true, min: 0, max: 10})}
+              {...register("people", { required: true, min: 0, max: maxPeopleAmount})}
               value={peopleAmount}
               onChange={e => setPeopleAmount(parseInt(e.target.value))}
               className={styles.numberInput}
@@ -103,9 +103,9 @@ const TableForm = ({action, actionText, id, ...props}) => {
                 onChange={e => setBill(parseInt(e.target.value))}
                 className={`${styles.billInput}`}
                 type='number'
-                // {...register("bill", {min: 0})}
+                {...register("bill", {min: 0})}
               />
-              {/* {errors.bill && <small className="d-block form-text text-danger ms-2 my-auto">Please, use positive value.</small>} */}
+              {errors.bill && <small className="d-block form-text text-danger ms-2 my-auto">Please, use positive value.</small>}
             </Form.Group>
           }
           <Button className="my-5" variant="primary" type="submit">
